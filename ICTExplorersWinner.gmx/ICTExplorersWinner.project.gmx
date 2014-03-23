@@ -29,6 +29,7 @@
     <object>objects\oMenu</object>
     <object>objects\oOptions</object>
     <object>objects\oCharacter</object>
+    <object>objects\oClone</object>
     <object>objects\oSolid</object>
     <object>objects\oWall</object>
     <object>objects\oControl</object>
@@ -38,6 +39,14 @@
     <room>rooms\rLevel1</room>
     <room>rooms\rOptions</room>
   </rooms>
+  <constants number="6">
+    <constant name="Idle">0</constant>
+    <constant name="Right">1</constant>
+    <constant name="Left">2</constant>
+    <constant name="Up">3</constant>
+    <constant name="RightUp">4</constant>
+    <constant name="LeftUp"></constant>
+  </constants>
   <help>
     <rtf>help.rtf</rtf>
   </help>

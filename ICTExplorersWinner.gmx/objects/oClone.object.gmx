@@ -46,6 +46,8 @@ SPR_JUMP = sCharacterJump;
 SOLID = oSolid;
 
 grounded = 1;
+
+step = 0;
 </string>
           </argument>
         </arguments>
@@ -69,21 +71,18 @@ grounded = 1;
           <argument>
             <kind>1</kind>
             <string>//horizontal movement
-if (keyboard_check_direct(KEY_RIGHT) &amp;&amp; !place_meeting(x+hsp,y,SOLID)){
+if ((ds_list_find_value(Keys,step) == Right) || (ds_list_find_value(Keys,step) == RightUp) &amp;&amp; !place_meeting(x+hsp,y,SOLID)){
     hsp = min(hsp + acc,hspMax);
     image_speed = 0.5;
     sprite_index = SPR_RUNNING;
-    ds_list_add(Keys,Right);
-} else if (keyboard_check_direct(KEY_LEFT) &amp;&amp; !place_meeting(x-hsp,y,SOLID)){
+} else if ((ds_list_find_value(Keys,step) == Left) || (ds_list_find_value(Keys,step) == LeftUp) &amp;&amp; !place_meeting(x-hsp,y,SOLID)){
     hsp = max(hsp - acc,-hspMax);
     image_speed = 0.5;
     sprite_index = SPR_RUNNING;
-    ds_list_add(Keys,Left);
 } else {
     hsp = 0;
     image_speed = 0.06;
     sprite_index = SPR_IDLE;
-    ds_list_add(Keys,Idle);
 }
 //horizontal collisions
 if (place_meeting(x+hsp,y,SOLID)){
@@ -99,17 +98,11 @@ x += hsp;
 if(!place_meeting(x,y+1,SOLID)){
     vsp += grav;
 }
-
-if(keyboard_check_direct(KEY_UP) &amp;&amp; grounded){
+var up;
+up = ((ds_list_find_value(Keys,step) == Up) || (ds_list_find_value(Keys,step) == RightUp) || (ds_list_find_value(Keys,step) == LeftUp));
+if(up &amp;&amp; grounded){
     grounded = 0;
     vsp = -sqrt(2*grav*64);
-    if (keyboard_check_direct(KEY_RIGHT)){
-        ds_list_add(Keys,RightUp);
-    } else if (keyboard_check_direct(KEY_LEFT)){
-        ds_list_add(Keys,LeftUp);
-    } else {
-        ds_list_add(Keys,Up);
-    }
 }
 //vertial collisions
 if (place_meeting(x,y+vsp,SOLID)){
@@ -128,19 +121,8 @@ if(sign(hsp) != 0){
     image_xscale = sign(hsp);
 }
 y += vsp;
-
-if(keyboard_check_released(ord('R'))){
-    var obj;
-    obj = instance_create(xstart,ystart,oClone);
-    obj.Keys = Keys;
-    x = xstart;
-    y = ystart;
-    Keys = ds_list_create();
-}
-
-if (keyboard_check_pressed(ord('O'))){
-    room_restart();
-}
+if (step &lt; ds_list_size(Keys)) 
+{step++;} else {instance_destroy();}
 </string>
           </argument>
         </arguments>
