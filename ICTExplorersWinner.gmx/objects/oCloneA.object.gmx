@@ -72,18 +72,18 @@ step = 0;
             <kind>1</kind>
             <string>//horizontal movement
 var b1,b1_,b2,b2_,b3,b4;
-b1 = 1//(ds_list_find_value(Keys,step) == Right);
-b1_ =  1//(ds_list_find_value(Keys,step) == RightUp);
-b2 = 1//(ds_list_find_value(Keys,step) == Left);
-b2_ = 1 //(ds_list_find_value(Keys,step) == LeftUp);
-b3 =1//!place_meeting(x+hsp,y,SOLID);
-b4 = 1//!place_meeting(x-hsp,y,SOLID);
+b1 = (ds_list_find_value(Keys,step) == Right);
+b1_ =  (ds_list_find_value(Keys,step) == RightUp);
+b2 = (ds_list_find_value(Keys,step) == Left);
+b2_ =  (ds_list_find_value(Keys,step) == LeftUp);
+b3 = !place_meeting(x+hsp,y,SOLID);
+b4 = !place_meeting(x-hsp,y,SOLID);
 //(b1 ||b1_)     (b2 &amp;&amp; b2_)
-if ((b1 ||b1_) &amp;&amp; b3){
+if (b3){
     hsp = min(hsp + acc,hspMax);
     image_speed = 0.5;
     sprite_index = SPR_RUNNING;
-} else if ((b2 &amp;&amp; b2_) &amp;&amp; b4){
+} else if (b4){
     hsp = max(hsp - acc,-hspMax);
     image_speed = 0.5;
     sprite_index = SPR_RUNNING;
@@ -107,7 +107,7 @@ if(!place_meeting(x,y+1,SOLID)){
     vsp += grav;
 }
 var up;
-up = 1//((ds_list_find_value(Keys,step) == Up) || (ds_list_find_value(Keys,step) == RightUp) || (ds_list_find_value(Keys,step) == LeftUp));
+up = ((ds_list_find_value(Keys,step) == Up) || (ds_list_find_value(Keys,step) == RightUp) || (ds_list_find_value(Keys,step) == LeftUp));
 if(up &amp;&amp; grounded){
     grounded = 0;
     vsp = -sqrt(2*grav*64);
