@@ -105,7 +105,8 @@ if(keyboard_check_direct(KEY_UP) &amp;&amp; grounded){
     vsp = -sqrt(2*grav*64);
     if (keyboard_check_direct(KEY_RIGHT)){
         ds_list_add(Keys,RightUp);
-    } else if (keyboard_check_direct(KEY_LEFT)){
+    } 
+    if (keyboard_check_direct(KEY_LEFT)){
         ds_list_add(Keys,LeftUp);
     } else {
         ds_list_add(Keys,Up);

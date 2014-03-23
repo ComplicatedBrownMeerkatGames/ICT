@@ -45,7 +45,7 @@
     <constant name="Left">2</constant>
     <constant name="Up">3</constant>
     <constant name="RightUp">4</constant>
-    <constant name="LeftUp"></constant>
+    <constant name="LeftUp">5</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>
