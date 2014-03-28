@@ -98,6 +98,7 @@ x += hsp;
 //jumping/gravity
 if(!place_meeting(x,y+1,SOLID)){
     vsp += grav;
+    grounded = 0;
 }
 
 if(keyboard_check_direct(KEY_UP) &amp;&amp; grounded){

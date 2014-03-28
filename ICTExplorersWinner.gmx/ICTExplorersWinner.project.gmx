@@ -12,6 +12,11 @@
       <sprite>sprites\sCharacterJump</sprite>
       <sprite>sprites\sCharacterRun</sprite>
       <sprite>sprites\sMask</sprite>
+      <sprites name="CharacterSillouete">
+        <sprite>sprites\sCharacterJumpS</sprite>
+        <sprite>sprites\sCharacterIdleS</sprite>
+        <sprite>sprites\sCharacterRunS</sprite>
+      </sprites>
     </sprites>
   </sprites>
   <backgrounds name="background"/>

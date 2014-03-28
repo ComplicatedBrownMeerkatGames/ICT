@@ -39,9 +39,9 @@ KEY_LEFT = vk_left;
 KEY_RIGHT = vk_right;
 KEY_UP = vk_up;
 
-SPR_RUNNING = sCharacterRun;
-SPR_IDLE = sCharacterIdle;
-SPR_JUMP = sCharacterJump;
+SPR_RUNNING = sCharacterRunS;
+SPR_IDLE = sCharacterIdleS;
+SPR_JUMP = sCharacterJumpS;
 
 SOLID = oSolid;
 
