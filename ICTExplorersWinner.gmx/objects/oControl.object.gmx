@@ -25,13 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-<<<<<<< HEAD
-            <string>splash = 1;
+            
+<string>splash = 1;
 instance_deactivate_all(1);
 count = 0;
 alpha = 0;
-=======
-            <string>pause=0
+<string>pause=0
 alpha=0.7
 textColorPause=c_white
 
@@ -77,8 +76,7 @@ b[2,0]="Quit"
         <arguments>
           <argument>
             <kind>1</kind>
-<<<<<<< HEAD
-            <string>if (keyboard_check_pressed(vk_space)){
+<string>if (keyboard_check_pressed(vk_space)){
    if(count &lt; global.splashNumber){ 
        alpha = 0;
        count ++;
@@ -88,7 +86,6 @@ b[2,0]="Quit"
    }
 }
 if (alpha &lt; 1){alpha += 0.1;}
-=======
             <string>scrGameEnd()
 game_end()
 >>>>>>> pause menu and main menu improvement
@@ -97,7 +94,6 @@ game_end()
         </arguments>
       </action>
     </event>
-<<<<<<< HEAD
     <event eventtype="8" enumb="0">
 =======
     <event eventtype="7" enumb="11">
@@ -118,7 +114,6 @@ game_end()
         <arguments>
           <argument>
             <kind>1</kind>
-<<<<<<< HEAD
             <string>
 if(splash){
     draw_set_color(c_black);       
@@ -132,7 +127,6 @@ if(splash){
     draw_set_halign(fa_left);
     draw_set_valign(fa_top);
 }
-=======
             <string>room_goto(rMenu)
 </string>
           </argument>
