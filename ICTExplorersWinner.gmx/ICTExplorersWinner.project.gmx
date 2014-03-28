@@ -18,6 +18,9 @@
         <sprite>sprites\sCharacterRunS</sprite>
       </sprites>
     </sprites>
+    <sprites name="Hud">
+      <sprite>sprites\sHud1</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -25,6 +28,7 @@
     <scripts name="folder_1">
       <script>scripts\scrStartGame.gml</script>
       <script>scripts\drawResetAlign.gml</script>
+      <script>scripts\scrGameEnd.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -44,13 +48,14 @@
     <room>rooms\rLevel1</room>
     <room>rooms\rOptions</room>
   </rooms>
-  <constants number="6">
+  <constants number="7">
     <constant name="Idle">0</constant>
     <constant name="Right">1</constant>
     <constant name="Left">2</constant>
     <constant name="Up">3</constant>
     <constant name="RightUp">4</constant>
     <constant name="LeftUp">5</constant>
+    <constant name="g">global</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

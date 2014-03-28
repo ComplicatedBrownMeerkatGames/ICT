@@ -25,16 +25,42 @@
         <arguments>
           <argument>
             <kind>1</kind>
+<<<<<<< HEAD
             <string>splash = 1;
 instance_deactivate_all(1);
 count = 0;
 alpha = 0;
+=======
+            <string>pause=0
+alpha=0.7
+textColorPause=c_white
+
+xorg=g.roomW/2
+yorg=g.roomH/2
+yorgText=yorg-35
+
+sel=0
+maxSel=3
+h=30
+
+
+//buttons
+b[0,0]="Restart"
+
+b[1,0]="Menu"
+
+b[2,0]="Quit"
+>>>>>>> pause menu and main menu improvement
 </string>
           </argument>
         </arguments>
       </action>
     </event>
+<<<<<<< HEAD
     <event eventtype="3" enumb="0">
+=======
+    <event eventtype="7" enumb="12">
+>>>>>>> pause menu and main menu improvement
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -51,6 +77,7 @@ alpha = 0;
         <arguments>
           <argument>
             <kind>1</kind>
+<<<<<<< HEAD
             <string>if (keyboard_check_pressed(vk_space)){
    if(count &lt; global.splashNumber){ 
        alpha = 0;
@@ -61,12 +88,20 @@ alpha = 0;
    }
 }
 if (alpha &lt; 1){alpha += 0.1;}
+=======
+            <string>scrGameEnd()
+game_end()
+>>>>>>> pause menu and main menu improvement
 </string>
           </argument>
         </arguments>
       </action>
     </event>
+<<<<<<< HEAD
     <event eventtype="8" enumb="0">
+=======
+    <event eventtype="7" enumb="11">
+>>>>>>> pause menu and main menu improvement
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -83,6 +118,7 @@ if (alpha &lt; 1){alpha += 0.1;}
         <arguments>
           <argument>
             <kind>1</kind>
+<<<<<<< HEAD
             <string>
 if(splash){
     draw_set_color(c_black);       
@@ -96,6 +132,143 @@ if(splash){
     draw_set_halign(fa_left);
     draw_set_valign(fa_top);
 }
+=======
+            <string>room_goto(rMenu)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>room_restart()
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if pause{
+draw_set_alpha(1)
+
+//up &amp;&amp; down
+if keyboard_check_pressed(vk_down) || keyboard_check_pressed(ord("S")){
+if sel=maxSel-1{sel=0} else
+sel=min(sel+1,maxSel-1)
+}
+if keyboard_check_pressed(vk_up) || keyboard_check_pressed(ord("W")){
+if sel=0{sel=maxSel-1} else
+sel=max(sel-1,0)
+}
+
+draw_sprite(sHud1,-1,xorg,yorg)
+
+//align text
+draw_set_valign(fa_middle)
+draw_set_halign(fa_center)
+draw_set_color(textColorPause)
+
+
+var i;
+for (i=0;i&lt;maxSel;i++){
+
+if i=sel draw_set_color(c_gray) else draw_set_color(c_white)
+
+draw_text_transformed(xorg,yorgText+i*h,b[i,0],1,1,0)
+
+}
+drawResetAlign()
+draw_set_alpha(alpha)
+
+if keyboard_check_released(vk_space) || keyboard_check_released(vk_return){
+draw_set_alpha(1)
+event_user(sel)
+}
+
+}
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="112">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>scrGameEnd()
+game_end()
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="27">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>pause=1-pause
+
+if pause=1{draw_set_alpha(0.7) sel=0} else if pause=0{draw_set_alpha(1)}
+
+>>>>>>> pause menu and main menu improvement
 </string>
           </argument>
         </arguments>

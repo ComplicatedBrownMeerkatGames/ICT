@@ -210,9 +210,11 @@ b[4,0]="Quit"
 
 //up &amp;&amp; down
 if keyboard_check_pressed(vk_down) || keyboard_check_pressed(ord("S")){
+if sel=maxSel-1{sel=0} else
 sel=min(sel+1,maxSel-1)
 }
 if keyboard_check_pressed(vk_up) || keyboard_check_pressed(ord("W")){
+if sel=0{sel=maxSel-1} else
 sel=max(sel-1,0)
 }
 

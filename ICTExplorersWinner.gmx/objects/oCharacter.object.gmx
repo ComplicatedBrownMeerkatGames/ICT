@@ -31,7 +31,7 @@ hspMax = 3;
 vspMax = 12;
 acc = 1;
 dec = 0.6;
-grav = 1.5;
+grav = .1//1.5;
 
 Keys = ds_list_create();
 
@@ -140,9 +140,7 @@ if(keyboard_check_pressed(vk_space)){
     Keys = ds_list_create();
 }
 
-if (keyboard_check_pressed(ord('O'))){
-    room_restart();
-}
+
 </string>
           </argument>
         </arguments>
