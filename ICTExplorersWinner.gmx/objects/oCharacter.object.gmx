@@ -130,7 +130,7 @@ if(sign(hsp) != 0){
 }
 y += vsp;
 
-if(keyboard_check_released(ord('R'))){
+if(keyboard_check_pressed(vk_space)){
     var obj;
     obj = instance_create(xstart,ystart,oClone);
     obj.Keys = Keys;
