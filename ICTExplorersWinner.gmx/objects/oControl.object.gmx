@@ -26,11 +26,11 @@
           <argument>
             <kind>1</kind>
             
-<string>splash = 1;
+splash = 1;
 instance_deactivate_all(1);
 count = 0;
 alpha = 0;
-<string>pause=0
+pause=0
 alpha=0.7
 textColorPause=c_white
 
@@ -55,10 +55,9 @@ b[2,0]="Quit"
         </arguments>
       </action>
     </event>
-<<<<<<< HEAD
     <event eventtype="3" enumb="0">
-=======
     <event eventtype="7" enumb="12">
+    
 >>>>>>> pause menu and main menu improvement
       <action>
         <libid>1</libid>
