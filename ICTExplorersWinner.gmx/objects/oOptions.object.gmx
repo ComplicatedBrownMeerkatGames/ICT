@@ -34,10 +34,12 @@ xorg=room_width/2
 h=32
 
 sel=0
-maxSel=1
+maxSel=2
 
 //buttons
-b[0,0]="Back"//button name
+b[0,0]="Change Controls"//button name
+
+b[1,0]="Back"//button name
 
 
 </string>
@@ -45,7 +47,7 @@ b[0,0]="Back"//button name
         </arguments>
       </action>
     </event>
-    <event eventtype="7" enumb="10">
+    <event eventtype="7" enumb="11">
       <action>
         <libid>1</libid>
         <id>603</id>
