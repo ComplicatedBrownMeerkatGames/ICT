@@ -93,6 +93,7 @@ game_end()
         </arguments>
       </action>
     </event>
+    </event>
     <event eventtype="8" enumb="0">
 
     <event eventtype="7" enumb="11">
@@ -131,6 +132,7 @@ room_goto(rMenu)
           </argument>
         </arguments>
       </action>
+    </event>
     </event>
     <event eventtype="7" enumb="10">
       <action>
