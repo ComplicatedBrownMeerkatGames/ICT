@@ -159,6 +159,7 @@ global.splashNumber = 1;</code>
     <instance objName="oWall" x="480" y="48" name="inst_BEF64109" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oWall" x="192" y="112" name="inst_F0AC5093" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oControl" x="208" y="192" name="inst_13F9646A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oCharacter" x="112" y="288" name="inst_A155F9FE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
