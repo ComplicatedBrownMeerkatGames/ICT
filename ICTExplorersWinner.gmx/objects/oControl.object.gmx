@@ -85,9 +85,8 @@ b[2,0]="Quit"
    }
 }
 if (alpha &lt; 1){alpha += 0.1;}
-            <string>scrGameEnd()
+scrGameEnd()
 game_end()
-</string>
 >>>>>>> pause menu and main menu improvement
 </string>
           </argument>
@@ -127,7 +126,7 @@ if(splash){
     draw_set_halign(fa_left);
     draw_set_valign(fa_top);
 }
-            <string>room_goto(rMenu)
+room_goto(rMenu)
 </string>
           </argument>
         </arguments>
