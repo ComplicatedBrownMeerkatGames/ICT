@@ -87,7 +87,7 @@ b[2,0]="Quit"
 if (alpha &lt; 1){alpha += 0.1;}
             <string>scrGameEnd()
 game_end()
-<string>
+</string>
 >>>>>>> pause menu and main menu improvement
 </string>
           </argument>
